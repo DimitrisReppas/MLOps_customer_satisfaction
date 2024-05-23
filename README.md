@@ -18,6 +18,9 @@ Let's jump into the Python packages you need. Within the Python environment of y
 git clone https://github.com/zenml-io/zenml-projects.git
 cd zenml-projects/customer-satisfaction
 pip install -r requirements.txt
+
+conda create -n mlops2 python=3.12 -y
+conda activate mlops2
 ```
 
 Starting with ZenML 0.20.0, ZenML comes bundled with a React-based dashboard. This dashboard allows you
@@ -25,6 +28,32 @@ to observe your stacks, stack components and pipeline DAGs in a dashboard interf
 
 ```bash
 pip install zenml["server"]
+zenml init 
+pip install scikit-learn
+pip install mlflow
+zenml up --blocking
+zenml integration install mlflow -y
+zenml experiment-tracker register mlflow_tracker --flavor=mlflow
+zenml model-deployer register mlflow --flavor=mlflow
+zenml stack register mlflow_stack -a default -o default -d mlflow -e mlflow_tracker --set
+pip install optuna
+pip install xgboost 
+pip install lightgbm
+pip uninstall zenml
+pip install zenml==0.35.1
+
+New try
+
+pip install zenml==0.35.1
+pip install zenml["server"]
+pip install catboost==1.0.4
+pip install joblib==1.1.0
+pip install lightgbm==3.3.2
+pip install optuna==2.10.0
+pip install streamlit==1.8.1
+pip install xgboost==1.5.2
+pip install markupsafe==1.1.1
+zenml init -> error
 zenml up
 ```
 
