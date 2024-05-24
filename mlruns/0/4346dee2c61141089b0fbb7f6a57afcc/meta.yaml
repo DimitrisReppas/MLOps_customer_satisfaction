@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/4346dee2c61141089b0fbb7f6a57afcc/artifacts
+end_time: 1716545656795
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4346dee2c61141089b0fbb7f6a57afcc
+run_name: shivering-crab-26
+run_uuid: 4346dee2c61141089b0fbb7f6a57afcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716545647029
+status: 3
+tags: []
+user_id: dreppas

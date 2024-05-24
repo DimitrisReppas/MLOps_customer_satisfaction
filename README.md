@@ -30,7 +30,7 @@ to observe your stacks, stack components and pipeline DAGs in a dashboard interf
 pip install zenml["server"]
 zenml init 
 pip install scikit-learn
-pip install mlflow
+pip install mlflow # isos den xreiazetai
 zenml up --blocking
 zenml integration install mlflow -y
 zenml experiment-tracker register mlflow_tracker --flavor=mlflow

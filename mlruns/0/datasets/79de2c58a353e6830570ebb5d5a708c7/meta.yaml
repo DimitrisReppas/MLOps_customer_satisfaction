@@ -1,0 +1,16 @@
+digest: db98bd58
+name: dataset
+profile: '{"num_rows": 92487, "num_elements": 1109844}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "payment_sequential", "required":
+  true}, {"type": "long", "name": "payment_installments", "required": true}, {"type":
+  "double", "name": "payment_value", "required": true}, {"type": "double", "name":
+  "price", "required": true}, {"type": "double", "name": "freight_value", "required":
+  true}, {"type": "double", "name": "product_name_lenght", "required": true}, {"type":
+  "double", "name": "product_description_lenght", "required": true}, {"type": "double",
+  "name": "product_photos_qty", "required": true}, {"type": "double", "name": "product_weight_g",
+  "required": true}, {"type": "double", "name": "product_length_cm", "required": true},
+  {"type": "double", "name": "product_height_cm", "required": true}, {"type": "double",
+  "name": "product_width_cm", "required": true}]}'
+source: '{"tags": {"mlflow.user": "dreppas", "mlflow.source.name": "steps/model_train.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "f450351c4bc8e56de9693a1ba2ecd3f4259864f4"}}'
+source_type: code
