@@ -1,0 +1,32 @@
+artifact_path: model
+flavors:
+  lightgbm:
+    code: null
+    data: model.pkl
+    lgb_version: 4.3.0
+    model_class: lightgbm.sklearn.LGBMRegressor
+  python_function:
+    data: model.pkl
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.8.19
+mlflow_version: 2.12.1
+model_size_bytes: 287130
+model_uuid: d7738e6fc2834c0da9afc34a47073b39
+run_id: 8bb020eb677a46b9b4c063b61bf2d735
+signature:
+  inputs: '[{"type": "long", "name": "payment_sequential", "required": true}, {"type":
+    "long", "name": "payment_installments", "required": true}, {"type": "double",
+    "name": "payment_value", "required": true}, {"type": "double", "name": "price",
+    "required": true}, {"type": "double", "name": "freight_value", "required": true},
+    {"type": "double", "name": "product_name_lenght", "required": true}, {"type":
+    "double", "name": "product_description_lenght", "required": true}, {"type": "double",
+    "name": "product_photos_qty", "required": true}, {"type": "double", "name": "product_weight_g",
+    "required": true}, {"type": "double", "name": "product_length_cm", "required":
+    true}, {"type": "double", "name": "product_height_cm", "required": true}, {"type":
+    "double", "name": "product_width_cm", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-05-24 11:52:23.872095'

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/6d207c21302d48feb5e71a11cea16fe0/artifacts
+end_time: 1716554931111
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6d207c21302d48feb5e71a11cea16fe0
+run_name: victorious-wasp-885
+run_uuid: 6d207c21302d48feb5e71a11cea16fe0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716554868846
+status: 3
+tags: []
+user_id: dreppas
