@@ -62,6 +62,7 @@ pip install scikit-learn
 pip install optuna
 pip install xgboost 
 pip install lightgbm
+pip install catboost 
 
 
 
