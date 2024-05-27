@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/dcbf52b5e7d54ca9bffd6829e996cde5/artifacts
+end_time: 1716807322294
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dcbf52b5e7d54ca9bffd6829e996cde5
+run_name: amazing-toad-561
+run_uuid: dcbf52b5e7d54ca9bffd6829e996cde5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716807310044
+status: 3
+tags: []
+user_id: dreppas

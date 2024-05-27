@@ -31,7 +31,7 @@ pip install zenml["server"]
 zenml init 
 pip install scikit-learn
 pip install mlflow # isos den xreiazetai
-zenml up --blocking
+zenml up --blocking # isos argotera to zenml up
 zenml integration install mlflow -y
 zenml experiment-tracker register mlflow_tracker --flavor=mlflow
 zenml model-deployer register mlflow --flavor=mlflow
@@ -56,6 +56,45 @@ pip install markupsafe==1.1.1
 zenml init -> error
 zenml up
 ```
+Last 27/5/2024
+pip install zenml["server"]
+pip install scikit-learn 
+pip install optuna
+pip install xgboost 
+pip install lightgbm
+
+
+
+# Initialize ZenML repository
+zenml init
+
+# Install MLflow integration
+zenml integration install mlflow -y
+
+# Register MLflow experiment tracker
+zenml experiment-tracker register mlflow_tracker --flavor=mlflow
+
+# Register MLflow model deployer
+zenml model-deployer register mlflow --flavor=mlflow
+
+# Register and set the stack
+zenml stack register mlflow_stack -a default -o default -d mlflow -e mlflow_tracker --set
+
+- Training pipeline:
+
+```bash
+python run_pipeline.py
+```
+
+# Run the ZenML Dashboard
+zenml up
+
+Navigate to http://127.0.0.1:8237/ to see the pipeline
+
+# Run the MLflow server
+mlflow server
+Navigate to http://127.0.0.1:5000/ to see the MLflow server
+
 
 If you are running the `run_deployment.py` script, you will also need to install some integrations using ZenML:
 

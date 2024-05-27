@@ -19,12 +19,15 @@ from .config import ModelNameConfig
 # # Import ModelNameConfig from config module directly
 #from config import ModelNameConfig
 
-experiment_tracker = Client().active_stack.experiment_tracker
-experiment_tracker = "mlflow_tracker"
+client = Client()
+client.activate_stack('mlflow_stack')
+# Retrieve the experiment tracker from the active stack
+active_stack = client.active_stack
+experiment_tracker = active_stack.experiment_tracker
 
 
 
-@step(experiment_tracker=experiment_tracker)
+@step(experiment_tracker=experiment_tracker.name)
 def train_model(
     x_train: pd.DataFrame,
     x_test: pd.DataFrame,

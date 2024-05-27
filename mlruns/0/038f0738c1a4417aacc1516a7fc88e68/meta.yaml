@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/038f0738c1a4417aacc1516a7fc88e68/artifacts
+end_time: 1716807948543
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 038f0738c1a4417aacc1516a7fc88e68
+run_name: agreeable-pug-583
+run_uuid: 038f0738c1a4417aacc1516a7fc88e68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716807744358
+status: 3
+tags: []
+user_id: dreppas

@@ -24,12 +24,18 @@ from zenml.client import Client
 # # Import ModelNameConfig from config module directly
 from config import ModelNameConfig
 
-experiment_tracker = Client().active_stack.experiment_tracker
-experiment_tracker = "mlflow_tracker"
+#experiment_tracker = Client().active_stack.experiment_tracker
+#experiment_tracker = "mlflow_tracker"
+
+client = Client()
+client.activate_stack('mlflow_stack')
+# Retrieve the experiment tracker from the active stack
+active_stack = client.active_stack
+experiment_tracker = active_stack.experiment_tracker
 
 
 
-@step(experiment_tracker=experiment_tracker)
+@step(experiment_tracker=experiment_tracker.name)
 def train_model(
     x_train: pd.DataFrame,
     x_test: pd.DataFrame,
@@ -72,7 +78,7 @@ def train_model(
             trained_model = model.train(x_train, y_train, **best_params)
         else:
             trained_model = model.train(x_train, y_train)
-        
+            import pdb; pdb.set_trace()
         return trained_model
     except Exception as e:
         logging.error(e)

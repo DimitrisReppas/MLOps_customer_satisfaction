@@ -38,7 +38,7 @@ def train_pipeline(ingest_data, clean_data, model_train, evaluation):
     
     #model = model_train(x_train, x_test, y_train, y_test, config)
     model = model_train(x_train, x_test, y_train, y_test)#, config)
-    #import pdb; pdb.set_trace()
+    
     mse, rmse = evaluation(model, x_test, y_test)
     #import pdb; pdb.set_trace()
 if __name__ == "__main__":
@@ -55,4 +55,4 @@ if __name__ == "__main__":
     pipeline_instance.run()
     
     # Optionally start the debugger
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()

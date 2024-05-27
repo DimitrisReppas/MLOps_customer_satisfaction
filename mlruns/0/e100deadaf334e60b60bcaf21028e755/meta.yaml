@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/e100deadaf334e60b60bcaf21028e755/artifacts
+end_time: 1716807744046
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e100deadaf334e60b60bcaf21028e755
+run_name: colorful-shoat-790
+run_uuid: e100deadaf334e60b60bcaf21028e755
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716807737911
+status: 3
+tags: []
+user_id: dreppas

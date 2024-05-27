@@ -9,13 +9,17 @@ from typing_extensions import Annotated
 from zenml import step
 #from zenml.steps import Output, step
 from zenml.client import Client
-
-experiment_tracker = Client().active_stack.experiment_tracker
-experiment_tracker = "mlflow_tracker"
 from typing import Tuple
 
+client = Client()
+client.activate_stack('mlflow_stack')
+# Retrieve the experiment tracker from the active stack
+active_stack = client.active_stack
+experiment_tracker = active_stack.experiment_tracker
 
-@step(experiment_tracker=experiment_tracker)
+
+
+@step(experiment_tracker=experiment_tracker.name)
 def evaluation(
     model: RegressorMixin, x_test: pd.DataFrame, y_test: pd.Series
 ) -> Tuple[Annotated[float, "r2_score"], Annotated[float, "rmse"]]:
