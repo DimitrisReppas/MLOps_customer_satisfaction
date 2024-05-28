@@ -16,7 +16,7 @@ if __name__ == "__main__":
     )
     
     training.run()
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
     print(
         "Now run \n "
         f"    mlflow ui --backend-store-uri '{get_tracking_uri()}'\n"

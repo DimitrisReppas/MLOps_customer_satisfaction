@@ -88,7 +88,7 @@ python run_pipeline.py
 ```
 
 # Run the ZenML Dashboard
-zenml up
+zenml up --blocking
 
 Navigate to http://127.0.0.1:8237/ to see the pipeline
 

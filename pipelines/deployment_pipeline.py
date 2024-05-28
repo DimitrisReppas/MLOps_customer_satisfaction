@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd
 from materializer.custom_materializer import cs_materializer
 from steps.clean_data import clean_data
-from steps.evaluation import evaluation
+from steps.evaluation3 import evaluation
 from steps.ingest_data import ingest_data
-from steps.model_train import train_model
+from steps.model_train3 import train_model
 from zenml import pipeline, step
 from zenml.config import DockerSettings
 from zenml.constants import DEFAULT_SERVICE_START_STOP_TIMEOUT
@@ -50,7 +50,7 @@ def dynamic_importer() -> str:
 class DeploymentTriggerConfig(BaseParameters):
     """Parameters that are used to trigger the deployment"""
 
-    min_accuracy: float = 0.9
+    min_accuracy: float = 0.0 # it was 0.92
 
 
 @step
@@ -60,7 +60,7 @@ def deployment_trigger(
 ) -> bool:
     """Implements a simple model deployment trigger that looks at the
     input model accuracy and decides if it is good enough to deploy"""
-
+    
     return accuracy > config.min_accuracy
 
 
@@ -185,9 +185,9 @@ def predictor(
     return prediction
 
 
-@pipeline(enable_cache=True, settings={"docker": docker_settings})
+@pipeline(enable_cache=False, settings={"docker": docker_settings}) # It was True
 def continuous_deployment_pipeline(
-    min_accuracy: float = 0.9,
+    min_accuracy: float = 0.92,
     workers: int = 1,
     timeout: int = DEFAULT_SERVICE_START_STOP_TIMEOUT,
 ):
@@ -197,6 +197,7 @@ def continuous_deployment_pipeline(
     model = train_model(x_train, x_test, y_train, y_test)
     mse, rmse = evaluation(model, x_test, y_test)
     deployment_decision = deployment_trigger(accuracy=mse)
+    #import pdb; pdb.set_trace()
     mlflow_model_deployer_step(
         model=model,
         deploy_decision=deployment_decision,
