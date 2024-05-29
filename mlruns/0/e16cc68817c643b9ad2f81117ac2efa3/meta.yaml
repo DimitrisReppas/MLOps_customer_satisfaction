@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/e16cc68817c643b9ad2f81117ac2efa3/artifacts
+end_time: 1716980252181
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e16cc68817c643b9ad2f81117ac2efa3
+run_name: unruly-bear-737
+run_uuid: e16cc68817c643b9ad2f81117ac2efa3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716980238818
+status: 3
+tags: []
+user_id: dreppas

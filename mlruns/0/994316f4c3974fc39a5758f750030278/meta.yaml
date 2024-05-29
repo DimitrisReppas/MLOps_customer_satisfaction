@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/994316f4c3974fc39a5758f750030278/artifacts
+end_time: 1716986040936
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 994316f4c3974fc39a5758f750030278
+run_name: painted-turtle-566
+run_uuid: 994316f4c3974fc39a5758f750030278
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716986028612
+status: 3
+tags: []
+user_id: dreppas

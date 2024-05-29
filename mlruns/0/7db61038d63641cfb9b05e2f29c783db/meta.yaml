@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/7db61038d63641cfb9b05e2f29c783db/artifacts
+end_time: 1716978767407
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7db61038d63641cfb9b05e2f29c783db
+run_name: sedate-crow-950
+run_uuid: 7db61038d63641cfb9b05e2f29c783db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716978761009
+status: 3
+tags: []
+user_id: dreppas

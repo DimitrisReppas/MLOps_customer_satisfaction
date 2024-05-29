@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/14d313edbe8649209a4f9d7d67130df6/artifacts
+end_time: 1716977471503
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 14d313edbe8649209a4f9d7d67130df6
+run_name: efficient-toad-352
+run_uuid: 14d313edbe8649209a4f9d7d67130df6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716977460321
+status: 3
+tags: []
+user_id: dreppas

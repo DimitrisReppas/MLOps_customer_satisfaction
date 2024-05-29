@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/8c65ee1e82634f54bd53a308a5f44d89/artifacts
+end_time: 1716978283462
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8c65ee1e82634f54bd53a308a5f44d89
+run_name: crawling-skink-772
+run_uuid: 8c65ee1e82634f54bd53a308a5f44d89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716978272192
+status: 3
+tags: []
+user_id: dreppas

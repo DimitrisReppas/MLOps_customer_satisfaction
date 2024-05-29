@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/8d7297a06b684aedbf674a820192ff5e/artifacts
+end_time: 1716978615209
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8d7297a06b684aedbf674a820192ff5e
+run_name: clumsy-mole-733
+run_uuid: 8d7297a06b684aedbf674a820192ff5e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716978608677
+status: 3
+tags: []
+user_id: dreppas
