@@ -63,6 +63,7 @@ pip install optuna
 pip install xgboost 
 pip install lightgbm
 pip install catboost 
+pip install streamlit
 
 
 
@@ -213,3 +214,8 @@ streamlit run streamlit_app.py
    ```bash
    zenml integration install mlflow -y
    ```
+
+###
+Extras
+
+docker-compose run app python run_deployment.py

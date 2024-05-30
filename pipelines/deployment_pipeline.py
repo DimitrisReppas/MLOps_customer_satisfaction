@@ -181,6 +181,7 @@ def predictor(
     df = pd.DataFrame(data["data"], columns=columns_for_df)
     json_list = json.loads(json.dumps(list(df.T.to_dict().values())))
     data = np.array(json_list)
+    
     prediction = service.predict(data)
     return prediction
 
@@ -216,4 +217,5 @@ def inference_pipeline(pipeline_name: str, pipeline_step_name: str):
         pipeline_step_name=pipeline_step_name,
         running=False,
     )
+    
     predictor(service=model_deployment_service, data=batch_data)

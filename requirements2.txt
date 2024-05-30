@@ -1,0 +1,7 @@
+zenml[server]
+scikit-learn
+optuna
+xgboost
+lightgbm
+catboost
+streamlit
