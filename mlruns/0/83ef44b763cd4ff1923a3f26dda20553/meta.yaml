@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/83ef44b763cd4ff1923a3f26dda20553/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 83ef44b763cd4ff1923a3f26dda20553
+run_name: painted-cow-861
+run_uuid: 83ef44b763cd4ff1923a3f26dda20553
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723467115365
+status: 1
+tags: []
+user_id: dreppas

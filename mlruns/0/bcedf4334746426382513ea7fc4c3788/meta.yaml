@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/bcedf4334746426382513ea7fc4c3788/artifacts
+end_time: 1723467115020
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bcedf4334746426382513ea7fc4c3788
+run_name: rare-cat-870
+run_uuid: bcedf4334746426382513ea7fc4c3788
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723467107400
+status: 3
+tags: []
+user_id: dreppas
