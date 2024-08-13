@@ -29,6 +29,7 @@ def ingest_data() -> pd.DataFrame:
     try:
         ingest_data = IngestData()
         df = ingest_data.get_data()
+        
         return df
     except Exception as e:
         logging.error(e)

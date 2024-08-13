@@ -61,6 +61,7 @@ def train_model(
             trained_model = model.train(x_train, y_train, **best_params)
         else:
             trained_model = model.train(x_train, y_train)
+        
         return trained_model
     except Exception as e:
         logging.error(e)

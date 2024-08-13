@@ -41,7 +41,7 @@ def main(config: str, min_accuracy: float):
     
     deploy = config == DEPLOY or config == DEPLOY_AND_PREDICT
     predict = config == PREDICT or config == DEPLOY_AND_PREDICT
-
+    
     if deploy:
         # Initialize a continuous deployment pipeline run
         continuous_deployment_pipeline(
@@ -49,14 +49,14 @@ def main(config: str, min_accuracy: float):
             workers=3,
             timeout=60,
         )
-
+    breakpoint()    
     if predict:
         # Initialize an inference pipeline run
         inference_pipeline(
             pipeline_name="continuous_deployment_pipeline",
             pipeline_step_name="mlflow_model_deployer_step",
         )
-
+        
     print(
         "You can run:\n "
         f"[italic green]    mlflow ui --backend-store-uri {get_tracking_uri()}"
@@ -75,7 +75,7 @@ def main(config: str, min_accuracy: float):
     
     if existing_services:
         service = cast(MLFlowDeploymentService, existing_services[0])
-        import pdb; pdb.set_trace()
+        
         if service.is_running:
             print(
                 f"The MLflow prediction server is running locally as a daemon "

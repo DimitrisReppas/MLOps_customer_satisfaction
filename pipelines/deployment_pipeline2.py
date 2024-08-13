@@ -144,7 +144,7 @@ def continuous_deployment_pipeline(
             mlflow.sklearn.log_model(model, "model")
             model_uri = f"runs:/{run.info.run_id}/model"
             print(f"Model logged to: {model_uri}")
-
+            breakpoint()
             # Deploy the model using the deploy_model step
             deploy_model(pipeline_name=pipeline_name,model_uri=model_uri)
 
