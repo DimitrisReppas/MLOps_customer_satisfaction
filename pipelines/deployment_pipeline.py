@@ -186,7 +186,7 @@ def predictor(
     return prediction
 
 
-@pipeline(enable_cache=True, settings={"docker": docker_settings}) # It was True
+@pipeline(enable_cache=False, settings={"docker": docker_settings}) # It was True
 def continuous_deployment_pipeline(
     min_accuracy: float = 0.92,
     workers: int = 1,

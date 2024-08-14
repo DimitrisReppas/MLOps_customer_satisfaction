@@ -176,7 +176,21 @@ python run_pipeline.py
 ```
 
 - The continuous deployment pipeline:
-
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+```bash
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+conda create -n mlops2 python=3.11 -y
+conda activate mlops2
+pip install zenml["server"]
+pip install scikit-learn 
+pip install optuna
+pip install xgboost 
+pip install lightgbm
+pip install catboost 
+pip install streamlit
 ```bash
 python run_deployment.py
 ```

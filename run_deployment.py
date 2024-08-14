@@ -49,7 +49,7 @@ def main(config: str, min_accuracy: float):
             workers=3,
             timeout=60,
         )
-    breakpoint()    
+       
     if predict:
         # Initialize an inference pipeline run
         inference_pipeline(
@@ -65,7 +65,7 @@ def main(config: str, min_accuracy: float):
         "`mlflow_example_pipeline` experiment. There you'll also be able to "
         "compare two or more runs.\n\n"
     )
-    
+
     # fetch existing services with same pipeline name, step name and model name
     existing_services = mlflow_model_deployer_component.find_model_server(
         pipeline_name="continuous_deployment_pipeline",
@@ -73,9 +73,12 @@ def main(config: str, min_accuracy: float):
         model_name="model",
     )
     
+    
+    
     if existing_services:
         service = cast(MLFlowDeploymentService, existing_services[0])
-        
+        service.start()
+        breakpoint()
         if service.is_running:
             print(
                 f"The MLflow prediction server is running locally as a daemon "

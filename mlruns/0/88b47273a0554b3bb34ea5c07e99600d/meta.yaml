@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/88b47273a0554b3bb34ea5c07e99600d/artifacts
+end_time: 1723626246930
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 88b47273a0554b3bb34ea5c07e99600d
+run_name: traveling-chimp-953
+run_uuid: 88b47273a0554b3bb34ea5c07e99600d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723625735234
+status: 3
+tags: []
+user_id: dreppas

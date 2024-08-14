@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/dreppas.ITML-Tech/Documents/My_repos/MLOps_customer_satisfaction/mlruns/0/d03b0e9e4be14f35b3c0c9872be9f424/artifacts
+end_time: 1723627099074
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d03b0e9e4be14f35b3c0c9872be9f424
+run_name: persistent-loon-909
+run_uuid: d03b0e9e4be14f35b3c0c9872be9f424
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723627093331
+status: 3
+tags: []
+user_id: dreppas

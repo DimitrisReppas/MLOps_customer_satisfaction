@@ -1,7 +1,7 @@
 from typing import cast
 
 import click
-from pipelines.deployment_pipeline3 import (
+from pipelines.deployment_pipeline2 import (
     continuous_deployment_pipeline,
     inference_pipeline,
 )

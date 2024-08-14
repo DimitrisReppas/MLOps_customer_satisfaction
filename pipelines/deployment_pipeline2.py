@@ -121,8 +121,9 @@ def deploy_model(pipeline_name: str, model_uri: str) -> MLFlowDeploymentService:
         mlserver=False,
         timeout=DEFAULT_SERVICE_START_STOP_TIMEOUT,
     )
+    
+    service = model_deployer.deploy_model(mlflow_deployment_config, service_type=MLFlowDeploymentService.SERVICE_TYPE)
     import pdb; pdb.set_trace()
-    service = model_deployer.deploy_model(mlflow_deployment_config)
     return service
 
 @pipeline(enable_cache=False, settings={"docker": docker_settings})
@@ -144,7 +145,7 @@ def continuous_deployment_pipeline(
             mlflow.sklearn.log_model(model, "model")
             model_uri = f"runs:/{run.info.run_id}/model"
             print(f"Model logged to: {model_uri}")
-            breakpoint()
+            
             # Deploy the model using the deploy_model step
             deploy_model(pipeline_name=pipeline_name,model_uri=model_uri)
 
