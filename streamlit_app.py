@@ -67,6 +67,7 @@ def main():
         pipeline_step_name="mlflow_model_deployer_step",
         running=False,
         )
+        
         if service is None:
             st.write(
                 "No service could be found. The pipeline will be run first to create a service."
@@ -91,6 +92,7 @@ def main():
         )
         json_list = json.loads(json.dumps(list(df.T.to_dict().values())))
         data = np.array(json_list)
+        service.start(timeout=10)  # should be a NOP if already started
         pred = service.predict(data)
         st.success(
             "Your Customer Satisfactory rate(range between 0 - 5) with given product details is :-{}".format(

@@ -12,7 +12,7 @@ if __name__ == "__main__":
         train_model(),
         evaluation(),
     )
-    import pdb; pdb.set_trace()
+   
     training.run()
     
     print(

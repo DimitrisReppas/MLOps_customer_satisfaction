@@ -77,8 +77,8 @@ def main(config: str, min_accuracy: float):
     
     if existing_services:
         service = cast(MLFlowDeploymentService, existing_services[0])
-        service.start()
-        breakpoint()
+        #service.start() Maybe I will need to to uncomment this line
+        
         if service.is_running:
             print(
                 f"The MLflow prediction server is running locally as a daemon "

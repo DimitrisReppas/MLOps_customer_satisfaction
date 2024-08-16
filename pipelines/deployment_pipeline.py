@@ -44,6 +44,7 @@ requirements_file = os.path.join(os.path.dirname(__file__), "requirements.txt")
 def dynamic_importer() -> str:
     """Downloads the latest data from a mock API."""
     data = get_data_for_test()
+    
     return data
 
 
@@ -99,6 +100,7 @@ def prediction_service_loader(
         model_name: the name of the model that is deployed
     """
     # get the MLflow model deployer stack component
+    
     model_deployer = MLFlowModelDeployer.get_active_model_deployer()
    
     # fetch existing services with same pipeline name, step name and model name
@@ -164,6 +166,7 @@ def predictor(
     data = json.loads(data)
     data.pop("columns")
     data.pop("index")
+    
     columns_for_df = [
         "payment_sequential",
         "payment_installments",

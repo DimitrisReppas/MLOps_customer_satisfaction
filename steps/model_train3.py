@@ -45,6 +45,7 @@ def train_model(
         model: RegressorMixin
     """
     try:
+        
         model = None
         tuner = None
 
