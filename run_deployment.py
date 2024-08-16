@@ -1,4 +1,6 @@
 from typing import cast
+import warnings
+warnings.filterwarnings('ignore')
 
 import click
 from pipelines.deployment_pipeline import (
@@ -30,11 +32,11 @@ DEPLOY_AND_PREDICT = "deploy_and_predict"
     "(`deploy_and_predict`).",
 )
 @click.option(
-    "--min-accuracy",
+    "--min_error",
     default=0.92,
-    help="Minimum accuracy required to deploy the model",
+    help="Minimum error required to deploy the model",
 )
-def main(config: str, min_accuracy: float):
+def main(config: str, min_error: float):
     """Run the MLflow example pipeline."""
     # get the MLflow model deployer stack component
     mlflow_model_deployer_component = MLFlowModelDeployer.get_active_model_deployer()
@@ -44,8 +46,9 @@ def main(config: str, min_accuracy: float):
     
     if deploy:
         # Initialize a continuous deployment pipeline run
+        
         continuous_deployment_pipeline(
-            min_accuracy=min_accuracy,
+            min_error=min_error,
             workers=3,
             timeout=60,
         )

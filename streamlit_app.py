@@ -1,12 +1,9 @@
 import json
-
 import numpy as np
 import pandas as pd
 import streamlit as st
 from PIL import Image
 from pipelines.deployment_pipeline import prediction_service_loader
-from run_deployment import main
-
 
 def main():
     st.title("End to End Customer Satisfaction Pipeline with ZenML")
@@ -19,12 +16,12 @@ def main():
     st.markdown(
         """ 
     #### Problem Statement 
-     The objective here is to predict the customer satisfaction score for a given order based on features like order status, price, payment, etc. I will be using [ZenML](https://zenml.io/) to build a production-ready pipeline to predict the customer satisfaction score for the next order or purchase.    """
+     The objective here is to predict the customer satisfaction score for a given order based on features like order status, price, payment, etc. We will be using [ZenML](https://zenml.io/) to build a production-ready pipeline to predict the customer satisfaction score for the next order or purchase.    """
     )
     st.image(whole_pipeline_image, caption="Whole Pipeline")
     st.markdown(
         """ 
-    Above is a figure of the whole pipeline, we first ingest the data, clean it, train the model, and evaluate the model, and if data source changes or any hyperparameter values changes, deployment will be triggered, and (re) trains the model and if the model meets minimum accuracy requirement, the model will be deployed.
+    Above is a figure of the whole pipeline, we first ingest the data, clean it, train the model, and evaluate the model, and if data source changes or any hyperparameter values changes, deployment will be triggered, and (re) trains the model and if the model meets minimum error requirement, the model will be deployed.
     """
     )
 
@@ -48,31 +45,39 @@ def main():
     | Product width (CMs) |    Width of the product measured in centimeters. |
     """
     )
-    payment_sequential = st.sidebar.slider("Payment Sequential")
-    payment_installments = st.sidebar.slider("Payment Installments")
-    payment_value = st.number_input("Payment Value")
-    price = st.number_input("Price")
-    freight_value = st.number_input("freight_value")
-    product_name_length = st.number_input("Product name length")
-    product_description_length = st.number_input("Product Description length")
-    product_photos_qty = st.number_input("Product photos Quantity ")
-    product_weight_g = st.number_input("Product weight measured in grams")
-    product_length_cm = st.number_input("Product length (CMs)")
-    product_height_cm = st.number_input("Product height (CMs)")
-    product_width_cm = st.number_input("Product width (CMs)")
 
-    if st.button("Predict"):
+    # Use st.form to group inputs together
+    with st.form(key='input_form'):
+        st.markdown("### Input Features (product details)")
+        
+        payment_sequential = st.slider("Payment Sequential", min_value=1, max_value=10, value=1) # minimum and maximum values for the sliders were hypothetical. You can change them if you want!
+        payment_installments = st.slider("Payment Installments", min_value=1, max_value=24, value=1)
+        payment_value = st.slider("Payment Value", min_value=0.0, max_value=1000.0, value=100.0)
+        price = st.slider("Price", min_value=0.0, max_value=1000.0, value=100.0)
+        freight_value = st.slider("Freight Value", min_value=0.0, max_value=100.0, value=10.0)
+        product_name_length = st.slider("Product Name Length", min_value=0, max_value=100, value=50)
+        product_description_length = st.slider("Product Description Length", min_value=0, max_value=1000, value=100)
+        product_photos_qty = st.slider("Product Photos Quantity", min_value=0, max_value=20, value=5)
+        product_weight_g = st.slider("Product Weight (g)", min_value=0, max_value=20000, value=500)
+        product_length_cm = st.slider("Product Length (cm)", min_value=0, max_value=100, value=10)
+        product_height_cm = st.slider("Product Height (cm)", min_value=0, max_value=100, value=10)
+        product_width_cm = st.slider("Product Width (cm)", min_value=0, max_value=100, value=10)
+
+        # Add a submit button for the form
+        submit_button = st.form_submit_button(label="Predict")
+
+    if submit_button:
         service = prediction_service_loader(
-        pipeline_name="continuous_deployment_pipeline",
-        pipeline_step_name="mlflow_model_deployer_step",
-        running=False,
+            pipeline_name="continuous_deployment_pipeline",
+            pipeline_step_name="mlflow_model_deployer_step",
+            running=False,
         )
         
         if service is None:
             st.write(
                 "No service could be found. The pipeline will be run first to create a service."
             )
-            run_main()
+            # Run the pipeline here if needed
 
         df = pd.DataFrame(
             {
@@ -95,13 +100,14 @@ def main():
         service.start(timeout=10)  # should be a NOP if already started
         pred = service.predict(data)
         st.success(
-            "Your Customer Satisfactory rate(range between 0 - 5) with given product details is :-{}".format(
+            "Your Customer Satisfactory rate (range between 0 - 5) with given product details is: {}".format(
                 pred
             )
         )
+
     if st.button("Results"):
         st.write(
-            "We have experimented with two ensemble and tree based models and compared the performance of each model. The results are as follows:"
+            "We have experimented with two ensemble and tree-based models and compared the performance of each model. The results are as follows:"
         )
 
         df = pd.DataFrame(
@@ -118,7 +124,6 @@ def main():
         )
         image = Image.open("_assets/feature_importance_gain.png")
         st.image(image, caption="Feature Importance Gain")
-
 
 if __name__ == "__main__":
     main()

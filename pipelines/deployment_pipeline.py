@@ -54,15 +54,25 @@ class DeploymentTriggerConfig(BaseParameters):
     min_accuracy: float = 0.0 # it was 0.92
 
 
+#@step
+#def deployment_trigger(
+#    accuracy: float,
+#    config: DeploymentTriggerConfig,
+#) -> bool:
+#    """Implements a simple model deployment trigger that looks at the
+##    input model accuracy and decides if it is good enough to deploy"""
+#    breakpoint()
+#    return accuracy > config.min_accuracy
+
 @step
 def deployment_trigger(
-    accuracy: float,
-    config: DeploymentTriggerConfig,
+    performance_error: float,
+    min_error: float,
 ) -> bool:
     """Implements a simple model deployment trigger that looks at the
     input model accuracy and decides if it is good enough to deploy"""
-    
-    return accuracy > config.min_accuracy
+    breakpoint()
+    return performance_error < min_error
 
 
 class MLFlowDeploymentLoaderStepParameters(BaseParameters):
@@ -191,16 +201,17 @@ def predictor(
 
 @pipeline(enable_cache=False, settings={"docker": docker_settings}) # It was True
 def continuous_deployment_pipeline(
-    min_accuracy: float = 0.92,
+    min_error: float = 0.92,
     workers: int = 1,
     timeout: int = DEFAULT_SERVICE_START_STOP_TIMEOUT,
 ):
     # Link all the steps artifacts together
+    
     df = ingest_data()
     x_train, x_test, y_train, y_test = clean_data(df)
     model = train_model(x_train, x_test, y_train, y_test)
     mse, rmse = evaluation(model, x_test, y_test)
-    deployment_decision = deployment_trigger(accuracy=mse)
+    deployment_decision = deployment_trigger(performance_error=mse, min_error=min_error)
     
     mlflow_model_deployer_step(
         model=model,
