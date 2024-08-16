@@ -1,3 +1,4 @@
+
 import logging
 
 import mlflow
@@ -14,8 +15,15 @@ from zenml import step
 from zenml.client import Client
 
 from .config import ModelNameConfig
+# # Import ModelNameConfig from config module directly
+#from config import ModelNameConfig
 
-experiment_tracker = Client().active_stack.experiment_tracker
+client = Client()
+client.activate_stack('mlflow_stack')
+# Retrieve the experiment tracker from the active stack
+active_stack = client.active_stack
+experiment_tracker = active_stack.experiment_tracker
+
 
 
 @step(experiment_tracker=experiment_tracker.name)
@@ -36,6 +44,7 @@ def train_model(
         model: RegressorMixin
     """
     try:
+        
         model = None
         tuner = None
 

@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd
 from materializer.custom_materializer import cs_materializer
 from steps.clean_data import clean_data
-from steps.evaluation3 import evaluation
+from steps.evaluation import evaluation
 from steps.ingest_data import ingest_data
-from steps.model_train3 import train_model
+from steps.model_train import train_model
 from zenml import pipeline, step
 from zenml.config import DockerSettings
 from zenml.constants import DEFAULT_SERVICE_START_STOP_TIMEOUT
