@@ -1,6 +1,8 @@
 import json
 import numpy as np
 import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
 import streamlit as st
 from PIL import Image
 from pipelines.deployment_pipeline import prediction_service_loader

@@ -71,7 +71,7 @@ def deployment_trigger(
 ) -> bool:
     """Implements a simple model deployment trigger that looks at the
     input model accuracy and decides if it is good enough to deploy"""
-    breakpoint()
+    
     return performance_error < min_error
 
 
