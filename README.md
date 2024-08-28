@@ -151,7 +151,7 @@ python run_deployment.py
 To round it off, a [Streamlit](https://streamlit.io/) application is deployed that consumes the latest model service asynchronously from the pipeline logic. This can be done easily with ZenML within the Streamlit code
 
 ![App_screenshot](_assets/appScreenshot1.png)
-![App_screenshot2](_assets/appScreenshot2.png)
+
 ### Run the app
 To run this Streamlit app in your local system, you can run the following command:-
 
@@ -163,7 +163,7 @@ streamlit run streamlit_app.py
 
   in local URL: http://localhost:8501
    or Network URL: http://192.168.1.75:8501
-
+![App_screenshot2](_assets/appScreenshot2.png)
 ## Summary
 
 In order to build a real-world workflow for predicting the customer satisfaction score for the next order or purchase (which will help make better decisions), it is not enough to just train the model once.
